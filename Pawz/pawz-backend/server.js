@@ -33,6 +33,7 @@ app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/images', imageRoutes);
+app.use('/', productRoutes);
 
 app.post('/create-payment', async (req, res) => {
   const { amount } = req.body;
