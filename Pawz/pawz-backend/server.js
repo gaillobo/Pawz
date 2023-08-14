@@ -20,7 +20,13 @@ const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URI || "http://localhost:3000",
+    credentials: true,
+  })
+);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/users', userRoutes);
@@ -45,6 +51,6 @@ app.post('/create-payment', async (req, res) => {
 
 
 const PORT = 3001;
-server.listen(PORT, () => {
+server.listen(Process.env.PORT || PORT, () => {
   console.log(`Server is up and running at port ${PORT}`);
 });
