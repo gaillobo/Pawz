@@ -2,7 +2,7 @@
 
     export const appApi = createApi({
         reducerPath: "appApi",
-        baseQuery: fetchBaseQuery({baseURL: process.env.REACT_APP_SERVER_URI || "http://localhost:3001", withCredentials:true}),
+        baseQuery: fetchBaseQuery({baseURL: process.env.REACT_APP_SERVER_URI || "http://localhost:3001"}),
         endpoints: (builder) => ({
             signup: builder.mutation({
                 query: (user) => ({
