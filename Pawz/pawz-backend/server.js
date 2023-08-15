@@ -15,8 +15,14 @@ const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 
-app.use(cors());
-app.options('*', cors());
+const corsOptions = {
+    origin: process.env.CLIENT_URI || "http://localhost:3000",
+    credentials: true
+};
+
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/users', userRoutes);
