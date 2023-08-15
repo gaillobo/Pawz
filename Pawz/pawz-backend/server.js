@@ -16,7 +16,7 @@ const orderRoutes = require('./routes/orderRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 
 app.use(cors());
-
+app.options('*', cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/users', userRoutes);
