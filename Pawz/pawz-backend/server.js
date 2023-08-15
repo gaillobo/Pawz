@@ -8,11 +8,6 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 require('./connection');
 const server = http.createServer(app);
-const { Server } = require('socket.io');
-const io = new Server(server, {
-  cors: '*',
-  methods: '*'
-});
 
 const User = require('./models/User');
 const userRoutes = require('./routes/userRoutes');
