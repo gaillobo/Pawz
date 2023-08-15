@@ -17,7 +17,7 @@ const imageRoutes = require('./routes/imageRoutes');
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URI || 'http://localhost:3000/',
+    origin: '*',
     credentials: true,
   })
 );
