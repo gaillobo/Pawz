@@ -7,7 +7,7 @@ const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 require('./connection');
-const server = http.createServer(app);
+
 
 const User = require('./models/User');
 const userRoutes = require('./routes/userRoutes');
@@ -17,7 +17,7 @@ const imageRoutes = require('./routes/imageRoutes');
 
 app.use(
   cors({
-    origin: '*',
+    origin: process.env.CLIENT_URI || 'http://localhost:3000/',
     credentials: true,
   })
 );
@@ -47,6 +47,6 @@ app.post('/create-payment', async (req, res) => {
 
 
 const PORT = 3001;
-server.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server is up and running at port ${PORT}`);
 });
