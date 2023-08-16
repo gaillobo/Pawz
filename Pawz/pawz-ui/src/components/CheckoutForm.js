@@ -22,7 +22,7 @@ function CheckoutForm({total}) {
     if (!stripe || !elements || user.cart.count <= 0) return;
     setPaying(true);
     const amountInCents = Math.round(total * 100);
-      const {client_secret} = await fetch("http://localhost:3001/create-payment", {
+      const {client_secret} = await fetch("https://pawz.vercel.app/create-payment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
