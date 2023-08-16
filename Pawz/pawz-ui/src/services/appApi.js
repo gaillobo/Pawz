@@ -6,14 +6,14 @@
         endpoints: (builder) => ({
             signup: builder.mutation({
                 query: (user) => ({
-                    url: "/users/signup",
+                    url: "https://pawz.vercel.app/users/signup",
                     method: "POST",
                     body: user,
                 }),
             }),
             login: builder.mutation({
                 query: (user) => ({
-                    url: "/users/login",
+                    url: "https://pawz.vercel.app/users/login",
                     method: "POST",
                     body: user,
                 }),
@@ -23,7 +23,7 @@
 
             createProduct:builder.mutation({
                 query:(product) =>({
-                    url:'/products',
+                    url:'https://pawz.vercel.app/products',
                     body: product,
                     method : "POST",
                 }),
@@ -31,7 +31,7 @@
 
             deleteProduct: builder.mutation({
                 query: ({ product_id, user_id }) => ({
-                    url: `/products/${product_id}`,
+                    url: `https://pawz.vercel.app/products/${product_id}`,
                     body: {
                         user_id,
                     },
@@ -41,7 +41,7 @@
 
             updateProduct: builder.mutation({
                 query: (product) => ({
-                    url: `/products/${product.id}`,
+                    url: `https://pawz.vercel.app/products/${product.id}`,
                     body: product,
                     method: "PATCH",
                 }),
@@ -51,7 +51,7 @@
 
             addToCart: builder.mutation({
                 query:(cartInfo) =>({
-                    url: "/products/add-to-cart",
+                    url: "https://pawz.vercel.app/products/add-to-cart",
                     body: cartInfo,
                     method: "POST",
                 }),    
@@ -59,7 +59,7 @@
 
             removeFromCart: builder.mutation({
                 query:(body) =>({
-                    url: "/products/remove-from-cart",
+                    url: "https://pawz.vercel.app/products/remove-from-cart",
                     body,
                     method: "POST",
                 }),
@@ -67,7 +67,7 @@
 
             increaseCartProduct: builder.mutation({
                 query:(body) =>({
-                    url: "/products/increase-cart",
+                    url: "https://pawz.vercel.app/products/increase-cart",
                     body,
                     method: "POST",
                 }),
@@ -75,7 +75,7 @@
 
             decreaseCartProduct: builder.mutation({
                 query:(body) =>({
-                    url: "/products/decrease-cart",
+                    url: "https://pawz.vercel.app/products/decrease-cart",
                     body,
                     method: "POST",
                 }),
@@ -83,7 +83,7 @@
 
             createOrder: builder.mutation({
                 query: (body) => ({
-                    url: "/orders",
+                    url: "https://pawz.vercel.app/orders",
                     method: 'POST', 
                     body,
                 }),
